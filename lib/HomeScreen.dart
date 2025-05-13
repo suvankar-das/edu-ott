@@ -12,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  SettingsModel? settingsWithMovies;
+  SettingsWithMovies? settingsWithMovies;
 
   @override
   void initState() {
@@ -22,12 +22,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _fetchSettingsFromHive() async {
     try {
-      var settingsBox = await Hive.openBox<SettingsModel>('settingsBox');
+      var swmBox =
+          await Hive.openBox<SettingsWithMovies>('settingsWithMoviesBox');
       setState(() {
-        settingsWithMovies = settingsBox.get('settings');
+        settingsWithMovies = swmBox.get('data');
       });
     } catch (e) {
-      print('Error fetching settings: $e');
+      print('Error fetching settingsWithMovies: $e');
     }
   }
 
@@ -42,45 +43,53 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-          const Center(child: PositionedLogo()),
+          // Fixed logo at top
+          const Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: PositionedLogo(),
+          ),
 
-          // ✅ Show actual content when data is available
+          // Scrollable content starts below the logo
           if (settingsWithMovies != null)
-            RefreshIndicator(
-              onRefresh: _refreshData,
-              child: SingleChildScrollView(
-                physics: const AlwaysScrollableScrollPhysics(),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    for (int i = 0;
-                        i < settingsWithMovies!.pageSettings.length;
-                        i++)
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          top: 10.0,
-                        ),
-                        child: Builder(
-                          builder: (context) {
-                            final item = settingsWithMovies!.pageSettings[i];
-                            switch (item.type) {
-                              case "tray":
-                              // return MasterTray(
-                              //   traycomponent: item,
-                              //   media: null,
-                              //   index: i,
-                              //   continueWatchTrayData: null,
-                              //   routePage: "Home",
-                              // );
+            Padding(
+              padding: const EdgeInsets.only(
+                  top: 150, bottom: 0), // height + some buffer
+              child: RefreshIndicator(
+                onRefresh: _refreshData,
+                child: SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      for (int i = 0;
+                          i < settingsWithMovies!.settings.pageSettings.length;
+                          i++)
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10.0),
+                          child: Builder(
+                            builder: (context) {
+                              final item =
+                                  settingsWithMovies!.settings.pageSettings[i];
+                              final moviesData = settingsWithMovies!.movies;
 
-                              default:
-                                return const SizedBox.shrink();
-                            }
-                          },
+                              switch (item.type) {
+                                case "tray":
+                                  return MasterTray(
+                                    traycomponent: item.settings,
+                                    media: moviesData,
+                                    routePage: "Home",
+                                  );
+                                default:
+                                  return const SizedBox.shrink();
+                              }
+                            },
+                          ),
                         ),
-                      ),
-                    const SizedBox(height: 10),
-                  ],
+                      const SizedBox(height: 10),
+                    ],
+                  ),
                 ),
               ),
             ),

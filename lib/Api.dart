@@ -276,6 +276,15 @@ class Api {
         await moviesBox.put(movieModel.id, movieModel);
       }
 
+      var settingsWithMoviesBox =
+          await Hive.openBox<SettingsWithMovies>('settingsWithMoviesBox');
+      await settingsWithMoviesBox.put(
+          'data',
+          SettingsWithMovies(
+            settings: settingsModel,
+            movies: moviesMap,
+          ));
+
       return SettingsWithMovies(
         settings: settingsModel,
         movies: moviesMap,
