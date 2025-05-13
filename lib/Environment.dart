@@ -10,6 +10,7 @@ class EnvironmentVars {
   static const apiUrl = 'https://indimuse.in';
   // static const kanchaLankaUrl = 'https://admin.kancchalannka.com/api/v1';
   static const kanchaLankaUrl = 'https://indimuse.in/api/v1';
+  static const kanchaLankaUrl1 = 'https://edu.indimuse.in/api/v1';
   static const userUrl = 'https://dev.indimuse.in/api/v1';
   static const bucketUrl = 'https://d85wz1yjbsfez.cloudfront.net';
   static const defaultImage =
@@ -19,3 +20,5 @@ class EnvironmentVars {
   static const segToolUrl = '';
   // static const bucketUrl = 'https://d33rgy2oqmippl.cloudfront.net';
 }
+
+//edu.indimuse.in
