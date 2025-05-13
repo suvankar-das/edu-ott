@@ -1,0 +1,142 @@
+{
+    "AF": {
+        "country_name": "Afghanistan",
+        "isd_code": "+93"
+    },
+    "AL": {
+        "country_name": "Albania",
+        "isd_code": "+355"
+    },
+    "DZ": {
+        "country_name": "Algeria",
+        "isd_code": "+213"
+    },
+    "AS": {
+        "country_name": "American Samoa",
+        "isd_code": "+1-684"
+    },
+    "AD": {
+        "country_name": "Andorra",
+        "isd_code": "+376"
+    },
+    "AO": {
+        "country_name": "Angola",
+        "isd_code": "+244"
+    },
+    "AI": {
+        "country_name": "Anguilla",
+        "isd_code": "+1-264"
+    },
+    "AQ": {
+        "country_name": "Antarctica",
+        "isd_code": "+672"
+    },
+    "AG": {
+        "country_name": "Antigua and Barbuda",
+        "isd_code": "+1-268"
+    },
+    "AR": {
+        "country_name": "Argentina",
+        "isd_code": "+54"
+    },
+    "AM": {
+        "country_name": "Armenia",
+        "isd_code": "+374"
+    },
+    "AW": {
+        "country_name": "Aruba",
+        "isd_code": "+297"
+    },
+    "AU": {
+        "country_name": "Australia",
+        "isd_code": "+61"
+    },
+    "AT": {
+        "country_name": "Austria",
+        "isd_code": "+43"
+    },
+    "AZ": {
+        "country_name": "Azerbaijan",
+        "isd_code": "+994"
+    },
+    "IN": {
+        "country_name": "India",
+        "isd_code": "+91"
+    },
+    "US": {
+        "country_name": "United States",
+        "isd_code": "+1"
+    },
+    "GB": {
+        "country_name": "United Kingdom",
+        "isd_code": "+44"
+    },
+    "CA": {
+        "country_name": "Canada",
+        "isd_code": "+1"
+    },
+    "CN": {
+        "country_name": "China",
+        "isd_code": "+86"
+    },
+    "FR": {
+        "country_name": "France",
+        "isd_code": "+33"
+    },
+    "DE": {
+        "country_name": "Germany",
+        "isd_code": "+49"
+    },
+    "JP": {
+        "country_name": "Japan",
+        "isd_code": "+81"
+    },
+    "BR": {
+        "country_name": "Brazil",
+        "isd_code": "+55"
+    },
+    "RU": {
+        "country_name": "Russia",
+        "isd_code": "+7"
+    },
+    "ZA": {
+        "country_name": "South Africa",
+        "isd_code": "+27"
+    },
+    "NG": {
+        "country_name": "Nigeria",
+        "isd_code": "+234"
+    },
+    "PK": {
+        "country_name": "Pakistan",
+        "isd_code": "+92"
+    },
+    "BD": {
+        "country_name": "Bangladesh",
+        "isd_code": "+880"
+    },
+    "MX": {
+        "country_name": "Mexico",
+        "isd_code": "+52"
+    },
+    "KR": {
+        "country_name": "South Korea",
+        "isd_code": "+82"
+    },
+    "IT": {
+        "country_name": "Italy",
+        "isd_code": "+39"
+    },
+    "ES": {
+        "country_name": "Spain",
+        "isd_code": "+34"
+    },
+    "SA": {
+        "country_name": "Saudi Arabia",
+        "isd_code": "+966"
+    },
+    "AE": {
+        "country_name": "United Arab Emirates",
+        "isd_code": "+971"
+    }
+}
