@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
           if (settingsWithMovies != null)
             Padding(
               padding: const EdgeInsets.only(
-                  top: 150, bottom: 0), // height + some buffer
+                  top: 110, bottom: 0), // height + some buffer
               child: RefreshIndicator(
                 onRefresh: _refreshData,
                 child: SingleChildScrollView(
